@@ -1,23 +1,78 @@
 aid: moonpay
 name: MoonPay
-description: 'MoonPay is a company surfaced as a portfolio company of paradigm, speedinvest and added
-  to the API Evangelist network as a stub for enrichment. Sector: crypto-infrastructure. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: >-
+  MoonPay is a crypto payments infrastructure company that lets businesses and
+  their users buy, sell, and swap digital assets. Its developer platform exposes
+  a Platform API and a Widget API over https://api.moonpay.com covering fiat-to-crypto
+  on-ramp, crypto-to-fiat off-ramp, token swaps and cross-chain bridging, virtual
+  bank accounts for programmatic banking, DeFi token data, KYC/customer management,
+  and a rich webhook event surface. MoonPay ships first-party JavaScript SDKs (the
+  moonpay-js widget SDK and login SDK), web and React Native inline components, a
+  CLI (@moonpay/cli), a published MCP server, and an official Agent Skills library
+  ("skills for AI agents to move money"). Surfaced as a portfolio company of Paradigm
+  and Speedinvest and enriched from its public developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/moonpay/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://github.com/moonpay.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - paradigm
 - speedinvest
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-developer-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Crypto Infrastructure
-apis: []
+- Payments
+- Cryptocurrency
+- On-Ramp
+- Off-Ramp
+- Fintech
+- Digital Wallet
+- Blockchain
+- KYC
+apis:
+- name: MoonPay Platform API
+  description: >-
+    Server and client API for on-ramp, off-ramp, swaps, quotes, sessions, customers
+    (KYC), payment methods, transactions, and virtual accounts.
+  humanURL: https://dev.moonpay.com/api-reference/platform
+  baseURL: https://api.moonpay.com/platform/v1
+  properties:
+  - type: Documentation
+    url: https://dev.moonpay.com/api-reference/platform/documentation/using-the-api
+  - type: APIReference
+    url: https://dev.moonpay.com/api-reference/platform
+  - type: Authentication
+    url: authentication/moonpay-authentication.yml
+  - type: Webhooks
+    url: asyncapi/moonpay-webhooks.yml
+- name: MoonPay Widget API
+  description: >-
+    Widget integration API for buy/sell/swap quotes and transactions, supported
+    currencies and countries, DeFi tokens, network fees, and virtual accounts.
+  humanURL: https://dev.moonpay.com/api-reference/widget
+  baseURL: https://api.moonpay.com
+  properties:
+  - type: APIReference
+    url: https://dev.moonpay.com/api-reference/widget
+  - type: Documentation
+    url: https://dev.moonpay.com/api-reference/widget
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -26,3 +81,74 @@ maintainers:
 common:
 - type: Website
   url: https://www.moonpay.com
+- type: DeveloperPortal
+  url: https://dev.moonpay.com
+- type: Documentation
+  url: https://dev.moonpay.com
+- type: APIReference
+  url: https://dev.moonpay.com/api-reference
+- type: GettingStarted
+  url: https://dev.moonpay.com/api-reference/platform/documentation/using-the-api
+- type: Support
+  url: https://support.moonpay.com
+- type: Blog
+  url: https://www.moonpay.com/blog
+- type: GitHubOrganization
+  url: https://github.com/moonpay
+- type: Login
+  url: https://dashboard.moonpay.com
+- type: TermsOfService
+  url: https://www.moonpay.com/legal/terms_of_use_row
+- type: PrivacyPolicy
+  url: https://www.moonpay.com/legal/privacy_policy
+- type: StatusPage
+  url: https://status.moonpay.com
+- type: Authentication
+  url: authentication/moonpay-authentication.yml
+- type: Conventions
+  url: conventions/moonpay-conventions.yml
+- type: Lifecycle
+  url: lifecycle/moonpay-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/moonpay-problem-types.yml
+- type: Conformance
+  url: conformance/moonpay-conformance.yml
+- type: Compliance
+  url: conformance/moonpay-conformance.yml
+- type: DataModel
+  url: data-model/moonpay-data-model.yml
+- type: Components
+  url: components/moonpay-components.yml
+- type: Sandbox
+  url: sandbox/moonpay-sandbox.yml
+- type: Webhooks
+  url: asyncapi/moonpay-webhooks.yml
+- type: Packages
+  url: packages/moonpay-packages.yml
+- type: SDKs
+  url: packages/moonpay-packages.yml
+- type: CLI
+  url: cli/moonpay-cli.yml
+- type: MCPServer
+  url: mcp/moonpay-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/moonpay-llms.txt
+- type: WellKnown
+  url: well-known/moonpay-well-known.yml
+- type: SecurityTxt
+  url: well-known/moonpay-security.txt
+- type: DomainSecurity
+  url: security/moonpay-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/moonpay-vulnerability-disclosure.yml
+- type: Security
+  url: https://hackerone.com/moonpay
+- type: TrustCenter
+  url: security/moonpay-trust-center.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 26
+  pass: local-v1

@@ -1,0 +1,48 @@
+generated: '2026-07-20'
+method: searched
+source: https://dev.moonpay.com/api-reference/widget/webhooks/overview
+spec_type: Webhooks
+transport: HTTP POST (provider -> partner endpoint)
+signing:
+  method: request signature
+  docs: https://dev.moonpay.com/api-reference/widget/webhooks/signature
+events:
+  - name: transaction_created
+    description: Sent when a customer creates a Buy transaction in the widget.
+  - name: transaction_updated
+    description: Sent whenever a Buy transaction's status or details change.
+  - name: transaction_failed
+    description: Sent when a Buy transaction fails.
+  - name: sell_transaction_created
+    description: Sent when a customer creates a Sell transaction in the widget.
+  - name: sell_transaction_updated
+    description: Sent whenever a Sell transaction's status or details change.
+  - name: sell_transaction_failed
+    description: Sent when a Sell transaction fails.
+  - name: sell_transaction_requote_required
+    description: Sent when a Sell transaction requires a requote because the price moved before the deposit was received.
+  - name: swap_transaction_created
+    description: Sent when a customer creates a Swap transaction.
+  - name: swap_transaction_completed
+    description: Sent when a Swap transaction completes successfully.
+  - name: swap_transaction_failed
+    description: Sent when a Swap transaction fails.
+  - name: swap_deposit_wallet_created
+    description: Sent when the deposit wallet for a swap has been generated and the customer can deposit.
+  - name: swap_deposit_received
+    description: Sent when the customer's deposit for a swap has been received.
+  - name: swap_asset_delivery_initiated
+    description: Sent when delivery of the swapped asset to the customer's wallet has been initiated.
+  - name: swap_quote_invalid
+    description: Sent when a swap's quote is no longer valid and the swap requires a requote.
+  - name: swap_refund_asset_delivery_initiated
+    description: Sent when a refund of the customer's deposit has been initiated.
+  - name: swap_refund_completed
+    description: Sent when a refund of the customer's deposit has completed.
+  - name: identity_check_updated
+    description: Sent whenever the KYC status of a customer changes.
+  - name: virtual_account_status_updated
+    description: Sent when the status of a virtual account changes.
+note: >-
+  MoonPay documents webhooks but publishes no AsyncAPI document; this is the captured
+  webhook event catalog (feeds the Webhooks pointer / asyncapi_events dimension).

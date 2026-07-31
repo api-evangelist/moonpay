@@ -1,0 +1,40 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.npmjs.com/org/moonpay
+packages:
+  - language: javascript
+    registry: npm
+    name: "@moonpay/moonpay-js"
+    version: 0.7.6
+    url: https://www.npmjs.com/package/@moonpay/moonpay-js
+    install: npm install @moonpay/moonpay-js
+    description: The MoonPay JavaScript SDK for integrating the MoonPay widget (buy/sell/swap).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@moonpay/login-sdk"
+    version: 1.2.0
+    url: https://www.npmjs.com/package/@moonpay/login-sdk
+    install: npm install @moonpay/login-sdk
+    description: MoonPay Wallet/Login SDK for integrating MoonPay wallet authentication.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@moonpay/cli"
+    version: 1.92.1
+    url: https://www.npmjs.com/package/@moonpay/cli
+    install: npm i -g @moonpay/cli
+    description: "MoonPay CLI (mp) — how agents move money; also runs an MCP server via `mp mcp`."
+    official: true
+    kind: cli
+sdk_families:
+  - name: React Native SDK
+    docs: https://dev.moonpay.com/platform/sdk-reference/react-native/overview
+    note: Headless payments and inline frames for mobile (documented; installed per docs).
+  - name: Web SDK
+    docs: https://dev.moonpay.com/platform/sdk-reference/web/create-client
+    note: createClient() browser SDK for the Platform API connect/quote/transaction flows.
+note: >-
+  MoonPay ships first-party JavaScript SDKs (@moonpay/moonpay-js widget SDK,
+  @moonpay/login-sdk wallet SDK) and a CLI (@moonpay/cli). Web and React Native
+  Platform SDKs are documented at dev.moonpay.com/platform/sdk-reference.

@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://dev.moonpay.com/api-reference/platform/documentation/using-the-api
+versioning:
+  scheme: uri-path
+  platform_api: v1
+  widget_api: v3
+  mode_selection: API key prefix (sk_test_ / sk_live_) selects test vs live, not the URL
+status_page: https://status.moonpay.com
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal deprecation/Sunset-header policy located in the developer docs at capture time.
+sla:
+  url: null
+  uptime_target: null
+deprecated_operations: []

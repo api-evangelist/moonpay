@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://dev.moonpay.com/platform/guides/api-and-sdk-credentials
+model:
+  selection: API key prefix selects environment (not a separate base URL)
+  base_url: https://api.moonpay.com
+key_prefixes:
+  test:
+    secret: sk_test_
+    header: "X-Api-Key: sk_test_..."
+  live:
+    secret: sk_live_
+    header: "X-Api-Key: sk_live_..."
+notes:
+  - Test mode vs live mode is determined by the API key you use, not the URL.
+  - >-
+    During the preview, MoonPay provisions accounts/credentials directly with partners;
+    published magic test card/bank fixture values are not documented on the public
+    developer site at capture time (do not assume Visa/Mastercard test PANs).
+  - Client-side test flows use short-lived accessTokens issued from a test session token.

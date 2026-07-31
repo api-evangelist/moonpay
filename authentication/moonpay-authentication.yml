@@ -1,0 +1,41 @@
+generated: '2026-07-20'
+method: searched
+source: https://dev.moonpay.com/api-reference/platform/documentation/using-the-api
+docs: https://dev.moonpay.com/platform/guides/api-and-sdk-credentials
+summary:
+  types: [apiKey, http-bearer, request-signing]
+  api_key_in: [header, query]
+  oauth2_flows: []
+schemes:
+  - name: SecretKeyHeader
+    type: apiKey
+    in: header
+    parameter: X-Api-Key
+    usage: Server-to-server requests. Test key prefix sk_test_, live key prefix sk_live_.
+    scope: server-side
+    docs: https://dev.moonpay.com/platform/guides/api-and-sdk-credentials
+  - name: ApiKeyQuery
+    type: apiKey
+    in: query
+    parameter: apiKey
+    usage: Publishable key used to initialize widget/client requests.
+    scope: client-side
+  - name: AccessTokenBearer
+    type: http
+    scheme: bearer
+    usage: >-
+      Client-side Platform API requests use the accessToken returned from a connection
+      as a Bearer token (Authorization: Bearer <accessToken>).
+    scope: client-side
+    token_lifetime: short-lived (expiresAt on issued credentials)
+  - name: WidgetUrlSignature
+    type: request-signing
+    algorithm: HMAC-SHA256
+    usage: >-
+      Widget/checkout URLs and certain requests are signed with the account secret key;
+      webhooks are verified with a request signature (see webhooks/signature docs).
+    docs: https://dev.moonpay.com/api-reference/widget/webhooks/signature
+notes:
+  - Test vs live mode is selected by the key prefix (sk_test_/sk_live_), not the URL.
+  - Secret keys must never be exposed to the frontend; client flows use short-lived accessTokens.
+  - No OAuth2/OIDC scope surface is documented; auth is key + bearer-token based.

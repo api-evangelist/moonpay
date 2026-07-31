@@ -1,0 +1,218 @@
+# MoonPay Developer Docs
+
+> Integrate MoonPay's on-ramp, off-ramp, and swap products: widgets, SDKs, and APIs that let your users buy, sell, and swap crypto.
+
+## Docs
+
+- [Using the Platform API](https://dev.moonpay.com/api-reference/platform/documentation/using-the-api.md): Get started with the MoonPay Platform API
+- [Export customer data](https://dev.moonpay.com/api-reference/platform/endpoints/customers/export.md): Export MoonPay-verified customer data using a consent token
+- [Get a customer](https://dev.moonpay.com/api-reference/platform/endpoints/customers/get.md): Get a customer's details and KYC standing
+- [Get a file upload URL](https://dev.moonpay.com/api-reference/platform/endpoints/customers/get-upload-url.md): Get a single-use presigned URL to upload a customer's identity documents
+- [Confirm uploaded files](https://dev.moonpay.com/api-reference/platform/endpoints/customers/submit-files.md): Confirm uploaded files and attach them to the customer's KYC session
+- [Submit KYC data](https://dev.moonpay.com/api-reference/platform/endpoints/customers/submit-kyc.md): Submit outstanding KYC requirements for a customer
+- [Delete a payment method](https://dev.moonpay.com/api-reference/platform/endpoints/payment-methods/delete.md): Remove a stored payment method for a customer
+- [List payment methods](https://dev.moonpay.com/api-reference/platform/endpoints/payment-methods/list.md): Get available payment method configurations for a user
+- [Get a quote](https://dev.moonpay.com/api-reference/platform/endpoints/quotes/get.md): Build quotes for fiat->crypto transactions
+- [Create a session](https://dev.moonpay.com/api-reference/platform/endpoints/sessions/create.md): Create a session token to initialize a connection
+- [Revoke a session](https://dev.moonpay.com/api-reference/platform/endpoints/sessions/revoke.md): Revoke an active session token
+- [Get a transaction](https://dev.moonpay.com/api-reference/platform/endpoints/transactions/get.md): Get details for a single transaction by ID
+- [List transactions](https://dev.moonpay.com/api-reference/platform/endpoints/transactions/list.md): List transactions for the connected user with optional date filtering and pagination
+- [Asset](https://dev.moonpay.com/api-reference/platform/objects-and-types/asset.md): A fiat currency or crypto token
+- [Customer](https://dev.moonpay.com/api-reference/platform/objects-and-types/customer.md): A customer and their KYC standing
+- [Customer export](https://dev.moonpay.com/api-reference/platform/objects-and-types/customer-export.md): MoonPay-verified customer data returned by the export endpoint
+- [Fees](https://dev.moonpay.com/api-reference/platform/objects-and-types/fees.md): Fee breakdown for an operation
+- [Payment Method](https://dev.moonpay.com/api-reference/platform/objects-and-types/payment-method.md): A payment method configuration with its capabilities and availability
+- [Quote](https://dev.moonpay.com/api-reference/platform/objects-and-types/quote.md): A quote for a buy transaction with locked rate, fees, and expiry
+- [Transaction](https://dev.moonpay.com/api-reference/platform/objects-and-types/transaction.md): A transaction representing a crypto purchase or sale
+- [Wallet](https://dev.moonpay.com/api-reference/platform/objects-and-types/wallet.md): A blockchain wallet address
+- [Widget API Reference](https://dev.moonpay.com/api-reference/widget.md): API reference for the MoonPay widget integration.
+- [Cancel Sell transaction](https://dev.moonpay.com/api-reference/widget/cancelselltransaction.md): Cancels a sell transaction. This endpoint will return HTTP status <span class="value">204 No Content</span> if the sell transaction was successfully canceled. If sell transaction could not be canceled (e.g. because it has already been completed) it will return HTTP status <span class="value">409 Con…
+- [Execute Swap quote](https://dev.moonpay.com/api-reference/widget/executeswapquote.md): Executes a given swap quote. Refer to our Recipes section for more detailed examples.
+- [Get Real-time Buy quote](https://dev.moonpay.com/api-reference/widget/getbuyquote.md): Get detailed real-time quote based on the provided currency code, base amount, your extra fee percentage, payment method, and the inclusion of the fees.
+- [Get Buy transaction](https://dev.moonpay.com/api-reference/widget/getbuytransaction.md): Retrieve a transaction by id. This call will return an error if no transaction with the supplied identifier exists.
+- [Get Buy transaction by External identifier](https://dev.moonpay.com/api-reference/widget/getbuytransactionbyexternalid.md): Retrieve a transaction by its externalTransactionId. This is the identifier you assigned the transaction when creating it. This endpoint returns an array of objects because we cannot ensure the uniqueness of externalTransactionId.
+- [List Buy transactions](https://dev.moonpay.com/api-reference/widget/getbuytransactions.md): Returns an array of successful Buy transactions which fulfill criteria supplied in the query parameters. Each entry in the array is a separate transaction object. Transactions will be listed from newest to oldest.
+- [List supported countries](https://dev.moonpay.com/api-reference/widget/getcountries.md): Returns the list of countries currently supported by MoonPay.
+- [List supported currencies](https://dev.moonpay.com/api-reference/widget/getcurrencies.md): Returns the list of currencies supported by MoonPay.
+- [Get Crypto Currency limits](https://dev.moonpay.com/api-reference/widget/getcurrencylimits.md): Returns an object containing minimum and maximum buy amounts including or excluding fees for base and quote currencies.
+- [Get customer](https://dev.moonpay.com/api-reference/widget/getcustomer.md): Returns very basic information about a customer based on their MoonPay ID. For you to be able to retrieve a customer, they must have at least one session initiated with your `Api-Key`.
+- [Get customer by externalId](https://dev.moonpay.com/api-reference/widget/getcustomerbyexternalid.md): Returns very basic information about a customer based on their external customer ID. For you to be able to retrieve a customer, they must have at least one session initiated with your `API-Key`. Please note that this endpoint returns an array of objects because we cannot ensure the uniqueness of the…
+- [Get DeFi token](https://dev.moonpay.com/api-reference/widget/getdefitoken.md): Retrieve defi token for a specific contractAddress and network code
+- [List DeFi tokens](https://dev.moonpay.com/api-reference/widget/getdefitokens.md): Search and retrieve a paginated list of defi tokens
+- [Check Customer's IP address](https://dev.moonpay.com/api-reference/widget/getipaddress.md): Returns information about an IP address. If the `isAllowed` flag is set to <span class="value">false</span>, it means that MoonPay accepts citizens of this country but not residents.
+- [Get Crypto network fees](https://dev.moonpay.com/api-reference/widget/getnetworkfees.md): Returns a set of key-value pairs representing the current network fees of cryptocurrencies against fiat currencies.
+- [Get off ramp transaction](https://dev.moonpay.com/api-reference/widget/getofframptransaction.md)
+- [Get off ramp transactions](https://dev.moonpay.com/api-reference/widget/getofframptransactions.md)
+- [Get on ramp transaction](https://dev.moonpay.com/api-reference/widget/getonramptransaction.md)
+- [Get on ramp transactions](https://dev.moonpay.com/api-reference/widget/getonramptransactions.md)
+- [Get Sell quote](https://dev.moonpay.com/api-reference/widget/getsellquote.md): Returns a set of key-value pairs representing a real-time sell quote for a currency. Supply the currency code, the base amount, your extra fee percentage, the payment method and whether the base amount is inclusive of fees, and MoonPay will return a detailed sell quote.
+- [Get Sell transaction](https://dev.moonpay.com/api-reference/widget/getselltransaction.md)
+- [Get Sell transaction by External identifier](https://dev.moonpay.com/api-reference/widget/getselltransactionbyexternalid.md): Retrieve a transaction by its externalTransactionId. This is the identifier you assigned the transaction when creating it. This endpoint returns an array of objects because we cannot ensure the uniqueness of externalTransactionId.
+- [List Sell transactions](https://dev.moonpay.com/api-reference/widget/getselltransactions.md): Returns an array of successful Sell transactions which fulfill criteria supplied in the query parameters. Each entry in the array is a separate transaction object. Transactions will be listed from newest to oldest. This call will return an error if `customerId` is not supplied in the query parameter…
+- [Get Swap pairs](https://dev.moonpay.com/api-reference/widget/getswappairs.md): Returns the list of swap pairs available to the account.
+- [Get Swap quote](https://dev.moonpay.com/api-reference/widget/getswapquote.md): Returns the swap quote for a specific swap pair.
+- [Get Swap requote](https://dev.moonpay.com/api-reference/widget/getswaprequote.md): Returns a swap transaction re quote by id. Refer to our <a href="/recipes">Recipes section</a> for more detailed examples.
+- [Get Swap transaction](https://dev.moonpay.com/api-reference/widget/getswaptransaction.md): Returns a swap transaction by id. Refer to our <a href="/recipes">Recipes section</a> for more detailed examples.
+- [Get virtual accounts](https://dev.moonpay.com/api-reference/widget/getvirtualaccounts.md)
+- [List available payment methods](https://dev.moonpay.com/api-reference/widget/listpaymentmethods.md)
+- [Reject Swap requote](https://dev.moonpay.com/api-reference/widget/rejectswaprequote.md): Rejects a given swap requote. Refer to our <a href="/recipes">Recipes section</a> for more detailed examples.
+- [Update on ramp virtual account](https://dev.moonpay.com/api-reference/widget/updateonrampvirtualaccount.md)
+- [Cancel Sell transaction by externalId](https://dev.moonpay.com/api-reference/widget/webhooks/cancelselltransactionbyexternalid.md): Cancels a sell transaction based on their external transaction ID. This endpoint will return HTTP status <span class="value">204 No Content</span> if the sell transaction was successfully canceled. If sell transaction could not be canceled (e.g. because it has already been completed) it will return…
+- [identity_check_updated](https://dev.moonpay.com/api-reference/widget/webhooks/identity-check-updated.md): Sent whenever the KYC status of a customer changes.
+- [Overview](https://dev.moonpay.com/api-reference/widget/webhooks/overview.md)
+- [sell_transaction_created](https://dev.moonpay.com/api-reference/widget/webhooks/sell-transaction-created.md): Sent when a customer creates a Sell transaction in the widget.
+- [sell_transaction_failed](https://dev.moonpay.com/api-reference/widget/webhooks/sell-transaction-failed.md): Sent when a Sell transaction fails.
+- [sell_transaction_requote_required](https://dev.moonpay.com/api-reference/widget/webhooks/sell-transaction-requote-required.md): Sent when a Sell transaction requires a requote because the price moved before the customer's deposit was received.
+- [sell_transaction_updated](https://dev.moonpay.com/api-reference/widget/webhooks/sell-transaction-updated.md): Sent whenever a Sell transaction's status or details change.
+- [Request signing](https://dev.moonpay.com/api-reference/widget/webhooks/signature.md)
+- [swap_asset_delivery_initiated](https://dev.moonpay.com/api-reference/widget/webhooks/swap-asset-delivery-initiated.md): Sent when delivery of the swapped asset to the customer's wallet has been initiated.
+- [swap_deposit_received](https://dev.moonpay.com/api-reference/widget/webhooks/swap-deposit-received.md): Sent when the customer's deposit for a swap has been received.
+- [swap_deposit_wallet_created](https://dev.moonpay.com/api-reference/widget/webhooks/swap-deposit-wallet-created.md): Sent when the deposit wallet for a swap has been generated and the customer can deposit.
+- [swap_quote_invalid](https://dev.moonpay.com/api-reference/widget/webhooks/swap-quote-invalid.md): Sent when a swap's quote is no longer valid and the swap requires a requote.
+- [swap_refund_asset_delivery_initiated](https://dev.moonpay.com/api-reference/widget/webhooks/swap-refund-asset-delivery-initiated.md): Sent when a refund of the customer's deposit has been initiated.
+- [swap_refund_completed](https://dev.moonpay.com/api-reference/widget/webhooks/swap-refund-completed.md): Sent when a refund of the customer's deposit has completed.
+- [swap_transaction_completed](https://dev.moonpay.com/api-reference/widget/webhooks/swap-transaction-completed.md): Sent when a Swap transaction completes successfully.
+- [swap_transaction_created](https://dev.moonpay.com/api-reference/widget/webhooks/swap-transaction-created.md): Sent when a customer creates a Swap transaction.
+- [swap_transaction_failed](https://dev.moonpay.com/api-reference/widget/webhooks/swap-transaction-failed.md): Sent when a Swap transaction fails.
+- [transaction_created](https://dev.moonpay.com/api-reference/widget/webhooks/transaction-created.md): Sent when a customer creates a Buy transaction in the widget.
+- [transaction_failed](https://dev.moonpay.com/api-reference/widget/webhooks/transaction-failed.md): Sent when a Buy transaction fails.
+- [transaction_updated](https://dev.moonpay.com/api-reference/widget/webhooks/transaction-updated.md): Sent whenever a Buy transaction's status or details change.
+- [virtual_account_status_updated](https://dev.moonpay.com/api-reference/widget/webhooks/virtual-account-status-updated.md): Sent when the status of a virtual account changes.
+- [virtual_account_transaction_status_updated](https://dev.moonpay.com/api-reference/widget/webhooks/virtual-account-transaction-status-updated.md): Sent when the status of a transaction within a virtual account changes.
+- [Changelog](https://dev.moonpay.com/platform/changelog.md): Updates to the MoonPay developer platform
+- [Add Card](https://dev.moonpay.com/platform/frames/add-card.md): Details on working with the Add Card frame used in the [Pay with card](/platform/guides/pay-with-card) flow.
+- [Apple Pay](https://dev.moonpay.com/platform/frames/apple-pay.md): Details on working with the [Apple Pay](/platform/guides/pay-with-apple-pay) frame.
+- [Buy](https://dev.moonpay.com/platform/frames/buy.md): Details on working with the headless Buy frame used in the [Pay with card](/platform/guides/pay-with-card) flow.
+- [Buy Button](https://dev.moonpay.com/platform/frames/buy-button.md): Details on working with the Buy Button frame, an express-checkout payment button that runs the same buy orchestration as the headless [Buy frame](/platform/frames/buy).
+- [Challenge](https://dev.moonpay.com/platform/frames/challenge.md): Details on working with the Challenge frame used by the [Pay with card](/platform/guides/pay-with-card) flow and by identity verification.
+- [Check](https://dev.moonpay.com/platform/frames/check.md): Check if a customer has an active connection.
+- [Connect flow](https://dev.moonpay.com/platform/frames/connect.md): Details on working with the [connect](/platform/guides/connect-a-customer) frame.
+- [Google Pay](https://dev.moonpay.com/platform/frames/google-pay.md): Details on working with the [Google Pay](/platform/guides/pay-with-google-pay) frame.
+- [Overview](https://dev.moonpay.com/platform/frames/overview.md): Protocol details for co-branded and headless [frames](/platform/overview/core-concepts#frames).
+- [Reset](https://dev.moonpay.com/platform/frames/reset.md): Clear a user's session and authentication state
+- [Widget](https://dev.moonpay.com/platform/frames/widget.md): Details on working with the [widget](/platform/guides/pay-with-widget) frame.
+- [API and SDK credentials](https://dev.moonpay.com/platform/guides/api-and-sdk-credentials.md): Understand the tokens and credentials you need for your integration.
+- [Hosted onboarding](https://dev.moonpay.com/platform/guides/connect-a-customer.md): Connect a customer's account with login and full KYC in MoonPay's co-branded connect frame.
+- [Onboarding via API](https://dev.moonpay.com/platform/guides/customer-api.md): Onboard customers in your own UI with the Customer API: check KYC status, submit outstanding requirements, and handle verification.
+- [Export customer data](https://dev.moonpay.com/platform/guides/export-customer-data.md): Capture a customer's consent and export their verified KYC data to another system so they don't have to verify again.
+- [Guest checkout](https://dev.moonpay.com/platform/guides/guest-checkout.md): Let new customers buy crypto with Apple Pay without a MoonPay account.
+- [Handle challenges](https://dev.moonpay.com/platform/guides/handling-challenges.md): Detect and respond to challenges.
+- [Android](https://dev.moonpay.com/platform/guides/manual-integration/android.md): Manual frame integration for Android using WebView and Kotlin.
+- [Flutter](https://dev.moonpay.com/platform/guides/manual-integration/flutter.md): Manual frame integration for Flutter using webview_flutter.
+- [iOS](https://dev.moonpay.com/platform/guides/manual-integration/ios.md): Manual frame integration for iOS using WKWebView and Swift.
+- [Overview](https://dev.moonpay.com/platform/guides/manual-integration/overview.md): Integrate MoonPay frames without using the SDK.
+- [React Native](https://dev.moonpay.com/platform/guides/manual-integration/react-native.md): Manual frame integration for React Native using react-native-webview.
+- [Web](https://dev.moonpay.com/platform/guides/manual-integration/web.md): Integrate MoonPay iframes directly in your application.
+- [Choose an onboarding path](https://dev.moonpay.com/platform/guides/onboarding-paths.md): Decide how customers onboard: hosted by MoonPay, via the Customer API, or deferred with guest checkout.
+- [Generate API clients](https://dev.moonpay.com/platform/guides/openapi-codegen.md): Generate type-safe API clients from the OpenAPI specification.
+- [Pay with Apple Pay](https://dev.moonpay.com/platform/guides/pay-with-apple-pay.md): Allow customers to buy crypto headlessly with Apple Pay.
+- [Pay with the buy button](https://dev.moonpay.com/platform/guides/pay-with-buy-button.md): Let customers buy crypto from a single express checkout button that handles payment-method selection and confirmation for you.
+- [Pay with card](https://dev.moonpay.com/platform/guides/pay-with-card.md): Allow customers to buy crypto using stored credit and debit cards.
+- [Pay with Google Pay](https://dev.moonpay.com/platform/guides/pay-with-google-pay.md): Allow customers to buy crypto headlessly with Google Pay.
+- [Pay with widget](https://dev.moonpay.com/platform/guides/pay-with-widget.md): Render the MoonPay buy widget to support all payment methods and regions.
+- [Choose a payment method](https://dev.moonpay.com/platform/guides/payment-methods.md): Pick the payment experience that fits your UI and coverage needs.
+- [Configure frame appearance](https://dev.moonpay.com/platform/guides/presentation-and-appearance.md): Control how co-branded frames look and behave in your app.
+- [Core concepts](https://dev.moonpay.com/platform/overview/core-concepts.md): Key terms and concepts for integrating with the MoonPay Platform
+- [Going Live](https://dev.moonpay.com/platform/overview/going-live.md): Acceptance criteria for going live with your integration.
+- [Introduction](https://dev.moonpay.com/platform/overview/introduction.md): Build fiat-to-crypto experiences with headless payments. You control the user experience while MoonPay handles compliance, risk, and fraud.
+- [Requirements](https://dev.moonpay.com/platform/overview/requirements.md): Requirements for the headless ramp integration.
+- [Test mode](https://dev.moonpay.com/platform/overview/test-mode.md): Use test mode to develop and test your integration without transferring real assets.
+- [Using agents](https://dev.moonpay.com/platform/overview/using-agents.md): Connect AI coding agents to the MoonPay Platform documentation using MCP, llms.txt, and contextual code actions.
+- [SDK reference](https://dev.moonpay.com/platform/sdk-reference/overview.md): Reference documentation for the MoonPay Platform SDKs.
+- [<MoonPayAddCard />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-add-card.md): Inline card entry frame. Embed card capture in your own layout.
+- [<MoonPayApplePayButton />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-apple-pay-button.md): Inline Apple Pay button. Render it wherever it should appear in your layout.
+- [<MoonPayAuth />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-auth.md): Inline auth frame for headless and Customer API integrations.
+- [<MoonPayBuyButton />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-buy-button.md): Inline card buy button. Render it wherever it should appear in your layout.
+- [<MoonPayBuyFrame />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-buy-frame.md): Headless buy frame. The declarative alternative to client.setupBuy().
+- [<MoonPayChallenge />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-challenge.md): Inline 3DS/challenge frame. Mount it when a payment frame emits a challenge event.
+- [<MoonPayConnect />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-connect.md): Inline connect flow. Render it wherever it should appear in your layout.
+- [<MoonPayConnectionCheck />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-connection-check.md): Headless connection check. The declarative alternative to client.getConnection().
+- [<MoonPayConnectionReset />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-connection-reset.md): Headless reset frame. The declarative alternative to client.resetConnection().
+- [<MoonPayGooglePayButton />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-google-pay-button.md): Inline Google Pay button. Render it wherever it should appear in your layout.
+- [<MoonPayWidget />](https://dev.moonpay.com/platform/sdk-reference/react-native/components/moonpay-widget.md): Inline buy widget. Render it wherever it should appear in your layout.
+- [Inline components](https://dev.moonpay.com/platform/sdk-reference/react-native/components/overview.md): Render MoonPay frames declaratively inside your own layout.
+- [client.connect()](https://dev.moonpay.com/platform/sdk-reference/react-native/connect.md): Render the connect flow in your app.
+- [client.deletePaymentMethod()](https://dev.moonpay.com/platform/sdk-reference/react-native/delete-payment-method.md): Delete a stored payment method for the connected customer.
+- [client.getConnection()](https://dev.moonpay.com/platform/sdk-reference/react-native/get-connection.md): Check whether the customer already has an active connection.
+- [client.getPaymentMethods()](https://dev.moonpay.com/platform/sdk-reference/react-native/get-payment-methods.md): List payment methods available for the connected customer.
+- [client.getQuote()](https://dev.moonpay.com/platform/sdk-reference/react-native/get-quote.md): Request a quote for a transaction.
+- [client.getTransaction()](https://dev.moonpay.com/platform/sdk-reference/react-native/get-transaction.md): Fetch a single transaction by ID.
+- [client.listTransactions()](https://dev.moonpay.com/platform/sdk-reference/react-native/list-transactions.md): List the connected customer's transactions with optional filters and pagination.
+- [Overview](https://dev.moonpay.com/platform/sdk-reference/react-native/overview.md): Use the React Native SDK to build fiat-to-crypto ramps with headless payments in your mobile app.
+- [MoonPayProvider](https://dev.moonpay.com/platform/sdk-reference/react-native/provider.md): Mount the provider once to make the SDK available throughout your React Native app.
+- [client.resetConnection()](https://dev.moonpay.com/platform/sdk-reference/react-native/reset-connection.md): Clear the customer's MoonPay connection for this partner.
+- [client.setupAddCard()](https://dev.moonpay.com/platform/sdk-reference/react-native/setup-add-card.md): Render the Add Card frame to capture a new card from the customer.
+- [client.setupAuth()](https://dev.moonpay.com/platform/sdk-reference/react-native/setup-auth.md): Present the auth frame and drive the customer through email/OTP authentication.
+- [client.setupBuy()](https://dev.moonpay.com/platform/sdk-reference/react-native/setup-buy.md): Mount the headless Buy frame and execute a transaction from a quote.
+- [client.setupChallenge()](https://dev.moonpay.com/platform/sdk-reference/react-native/setup-challenge.md): Render the Challenge frame to resolve verification required by another flow.
+- [client.setupWidget()](https://dev.moonpay.com/platform/sdk-reference/react-native/setup-widget.md): Render the MoonPay buy widget and start a transaction.
+- [useMoonPay()](https://dev.moonpay.com/platform/sdk-reference/react-native/use-moonpay.md): Read the SDK client from any component below the provider.
+- [client.connect()](https://dev.moonpay.com/platform/sdk-reference/web/connect.md): Render the connect flow in your UI.
+- [createClient()](https://dev.moonpay.com/platform/sdk-reference/web/create-client.md): Initialize a reusable SDK client with a `sessionToken`.
+- [client.deletePaymentMethod()](https://dev.moonpay.com/platform/sdk-reference/web/delete-payment-method.md): Delete a stored payment method for the connected customer.
+- [client.getConnection()](https://dev.moonpay.com/platform/sdk-reference/web/get-connection.md): Check whether the customer already has an active connection.
+- [client.getPaymentMethods()](https://dev.moonpay.com/platform/sdk-reference/web/get-payment-methods.md): List payment methods available for the connected customer.
+- [client.getQuote()](https://dev.moonpay.com/platform/sdk-reference/web/get-quote.md): Request a quote for a transaction.
+- [client.getTransaction()](https://dev.moonpay.com/platform/sdk-reference/web/get-transaction.md): Fetch a single transaction by ID.
+- [Identity methods](https://dev.moonpay.com/platform/sdk-reference/web/identity.md): Create, update, and verify a customer identity, and upload identity documents, for Identity API integrations.
+- [client.listTransactions()](https://dev.moonpay.com/platform/sdk-reference/web/list-transactions.md): List the connected customer's transactions with optional filters and pagination.
+- [Overview](https://dev.moonpay.com/platform/sdk-reference/web/overview.md): Use the Web SDK to build fiat-to-crypto ramps with headless payments.
+- [client.resetConnection()](https://dev.moonpay.com/platform/sdk-reference/web/reset-connection.md): Clear the customer's MoonPay connection for this partner.
+- [client.setupAddCard()](https://dev.moonpay.com/platform/sdk-reference/web/setup-add-card.md): Render the Add Card frame to capture a new card from the customer.
+- [client.setupApplePay()](https://dev.moonpay.com/platform/sdk-reference/web/setup-apple-pay.md): Render the Apple Pay frame and start a transaction.
+- [client.setupAuth()](https://dev.moonpay.com/platform/sdk-reference/web/setup-auth.md): Render the Auth frame to authenticate a customer with email and OTP.
+- [client.setupBuy()](https://dev.moonpay.com/platform/sdk-reference/web/setup-buy.md): Mount the headless Buy frame and execute a transaction from a quote.
+- [client.setupBuyButton()](https://dev.moonpay.com/platform/sdk-reference/web/setup-buy-button.md): Render the MoonPay-hosted buy button and run the buy pipeline on tap.
+- [client.setupChallenge()](https://dev.moonpay.com/platform/sdk-reference/web/setup-challenge.md): Render the Challenge frame to resolve verification required by another flow.
+- [client.setupGooglePay()](https://dev.moonpay.com/platform/sdk-reference/web/setup-google-pay.md): Render the Google Pay frame and start a transaction.
+- [client.setupWidget()](https://dev.moonpay.com/platform/sdk-reference/web/setup-widget.md): Render the MoonPay buy widget and start a transaction.
+- [FAQ](https://dev.moonpay.com/widget/faqs.md): Common questions about integrating, customizing, and going live with the MoonPay on-ramp and off-ramp widget.
+- [Mobile payments](https://dev.moonpay.com/widget/mobile-payments.md): Answers to common questions about Apple Pay and Google Pay support in the MoonPay widget.
+- [Architecture](https://dev.moonpay.com/widget/off-ramp/architecture.md): The MoonPay Off-Ramp is a standalone widget product with an optional API and webhooks for an enhanced user experience. We provide web and mobile SDKs to render the widget in your app and a backend Node SDK for performing server-side functions.
+- [Widget theming](https://dev.moonpay.com/widget/off-ramp/customization/appearance.md): Enhance your website or applications user experience by tailoring the MoonPay widget's appearance to align with your brand. These personalization options are referred to as a _theme_.
+- [Off-ramp widget parameters](https://dev.moonpay.com/widget/off-ramp/customization/parameters.md): The following parameters can be used to customize the user journey in the widget.
+- [Requote webhooks](https://dev.moonpay.com/widget/off-ramp/customization/requote-webhooks.md): Handle the sell_transaction_requote_required webhook to surface in-app requote notifications when a sell price changes.
+- [URL signing](https://dev.moonpay.com/widget/off-ramp/customization/url-signing.md): Protecting your sensitive data
+- [Integration design guide](https://dev.moonpay.com/widget/off-ramp/design-guide.md): Build your integration with the MoonPay Standard, proven insights from top-performing partner integrations that drive revenue and usability.
+- [SDK event properties](https://dev.moonpay.com/widget/off-ramp/integration-methods/sdks/event-properties.md): Type definitions and properties for the data passed in MoonPay off-ramp widget SDK events.
+- [SDK ramp events](https://dev.moonpay.com/widget/off-ramp/integration-methods/sdks/events.md): Reference for the lifecycle events the MoonPay off-ramp widget SDK sends to your parent app, and the methods to handle them.
+- [Node.js SDK](https://dev.moonpay.com/widget/off-ramp/integration-methods/sdks/node.md): Set up the moonpay-node SDK with your secret key to sign widget URLs and call MoonPay APIs from your server.
+- [Off-ramp SDK integration](https://dev.moonpay.com/widget/off-ramp/integration-methods/sdks/overview.md): We have SDKs for all your tech stacks. Pick the one that is right for you.
+- [React SDK](https://dev.moonpay.com/widget/off-ramp/integration-methods/sdks/react.md): Add the MoonPay off-ramp widget to a React app using the moonpay-react provider and components.
+- [React Native SDK](https://dev.moonpay.com/widget/off-ramp/integration-methods/sdks/react-native.md): Integrate the MoonPay off-ramp widget in a React Native app with the react-native-moonpay-sdk and react-native-webview.
+- [Web SDK](https://dev.moonpay.com/widget/off-ramp/integration-methods/sdks/web.md): Integrate the MoonPay off-ramp widget on the web using a script tag or the type-safe moonpay-js npm package.
+- [URL Integration](https://dev.moonpay.com/widget/off-ramp/integration-methods/url.md): You can use the below pre-written code to quickly get started on adding a Sell Crypto button that opens the MoonPay widget in a new browser tab.
+- [Off-ramp overview](https://dev.moonpay.com/widget/off-ramp/overview.md): MoonPay is the leading ramps provider in the space and continues to be the most popular gateway for crypto and NFT applications across the world. With the MoonPay fiat-to-crypto onramp users can purchase cryptocurrencies directly from your website or web3 application.
+- [Quickstart](https://dev.moonpay.com/widget/off-ramp/quickstart.md): Build a working MoonPay off-ramp integration in your browser, from setup to a live crypto-to-fiat sale.
+- [Architecture](https://dev.moonpay.com/widget/on-ramp/architecture.md): The MoonPay On-Ramp is a standalone widget product with an optional API and webhooks for an enhanced user experience. We provide web and mobile SDKs to render the widget in your app and a backend Node SDK for performing server-side functions.
+- [Widget theming](https://dev.moonpay.com/widget/on-ramp/customization/appearance.md): Enhance your website or applications user experience by tailoring the MoonPay widget's appearance to align with your brand. These personalization options are referred to as a _theme_.
+- [IP matching](https://dev.moonpay.com/widget/on-ramp/customization/ip-matching.md): Bind a signed on-ramp widget URL to a hash of the customer's IP address so a generated URL only loads for the intended device.
+- [On-ramp widget parameters](https://dev.moonpay.com/widget/on-ramp/customization/parameters.md): The following parameters can be used to customize the user journey in the widget.
+- [URL signing](https://dev.moonpay.com/widget/on-ramp/customization/url-signing.md): Protecting your sensitive data
+- [Integration design guide](https://dev.moonpay.com/widget/on-ramp/design-guide.md): Build your integration with the MoonPay Standard, proven insights from top-performing partner integrations that drive revenue and usability.
+- [SDK event properties](https://dev.moonpay.com/widget/on-ramp/integration-methods/sdks/event-properties.md): Type definitions and properties for the data passed in MoonPay on-ramp widget SDK events.
+- [SDK ramp events](https://dev.moonpay.com/widget/on-ramp/integration-methods/sdks/events.md): Reference for the lifecycle events the MoonPay on-ramp widget SDK sends to your parent app, and the methods to handle them.
+- [Node.js SDK](https://dev.moonpay.com/widget/on-ramp/integration-methods/sdks/node.md): Set up the moonpay-node SDK with your secret key to sign widget URLs and call MoonPay APIs from your server.
+- [On-ramp SDK integration](https://dev.moonpay.com/widget/on-ramp/integration-methods/sdks/overview.md): We have SDKs for all your tech stacks. Pick the one that is right for you.
+- [React SDK](https://dev.moonpay.com/widget/on-ramp/integration-methods/sdks/react.md): Add the MoonPay on-ramp widget to a React app using the moonpay-react provider and components.
+- [React Native SDK](https://dev.moonpay.com/widget/on-ramp/integration-methods/sdks/react-native.md): Integrate the MoonPay on-ramp widget in a React Native app with the react-native-moonpay-sdk and react-native-webview.
+- [Web SDK](https://dev.moonpay.com/widget/on-ramp/integration-methods/sdks/web.md): Integrate the MoonPay on-ramp widget on the web using a script tag or the type-safe moonpay-js npm package.
+- [URL Integration](https://dev.moonpay.com/widget/on-ramp/integration-methods/url.md): You can use the below pre-written code to quickly get started on adding a **Buy Crypto** button that opens the MoonPay widget in a new browser tab.
+- [On-ramp overview](https://dev.moonpay.com/widget/on-ramp/overview.md): MoonPay is the leading ramps provider in the space and continues to be the most popular gateway for crypto and NFT applications across the world. With the MoonPay fiat-to-crypto On-Ramp, users can purchase cryptocurrencies directly from your website or web3 application.
+- [Quickstart](https://dev.moonpay.com/widget/on-ramp/quickstart.md): Build a working MoonPay on-ramp integration in your browser, from setup to a live fiat-to-crypto purchase.
+- [Why build with MoonPay](https://dev.moonpay.com/widget/overview.md): MoonPay is the top payment infrastructure for cryptocurrencies that provides a smooth bridge between traditional financial systems and the new world of cryptocurrencies. Developers who are building on Web3 (a vision for a decentralized internet where users control their data and interactions) can gr…
+- [Sandbox testing guide](https://dev.moonpay.com/widget/sandbox-testing.md): MoonPay provides a dedicated sandbox environment designed for integration development and testing. Using this sandbox helps you identify potential issues early, confirm compatibility, and minimize risks during deployment.
+- [Sustainability transparency (MiCA)](https://dev.moonpay.com/widget/sustainability-transparency.md): MiCA’s sustainability disclosure requirements mandate that all CASPs provide information on climate and environmental impacts, including mandatory disclosures about the consensus mechanism’s principal adverse impacts on climate and other environmental factors.
+
+## OpenAPI Specs
+
+- [openapi](https://api.moonpay.com/platform/openapi.json)
+- [webhooks.openapi](https://dev.moonpay.com/api-reference/widget/webhooks.openapi.json)
+- [server-to-server.openapi](https://dev.moonpay.com/api-reference/widget/server-to-server.openapi.json)
+- [ramps-and-swaps.openapi](https://dev.moonpay.com/api-reference/widget/ramps-and-swaps.openapi.json)
+- [virtual-accounts.openapi](https://dev.moonpay.com/api-reference/widget/virtual-accounts.openapi.json)
+- [openapi-webhooks](https://dev.moonpay.com/openapi-webhooks.json)
+
+## Optional
+
+- [Help Center](https://support.moonpay.com/)

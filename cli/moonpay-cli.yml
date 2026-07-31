@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.npmjs.com/package/@moonpay/cli
+cli:
+  name: MoonPay CLI
+  tagline: "MoonPay CLI — how agents move money"
+  package: "@moonpay/cli"
+  registry: npm
+  version: 1.92.1
+  binaries: [mp, moonpay]
+  install: npm i -g @moonpay/cli
+  official: true
+auth:
+  flow: email-otp
+  commands:
+    - mp login --email <email>
+    - mp verify --email <email> --code <code>
+  credentials_store: ~/.config/moonpay/credentials.json
+command_families:
+  - group: auth
+    commands: [login, verify]
+    summary: Authenticate the CLI via email + one-time code.
+  - group: wallet
+    commands: [create, import, list, retrieve, delete, export]
+    summary: Local wallet management.
+  - group: token
+    commands: [search, retrieve, trending, swap, bridge, transfer]
+    summary: Token discovery and on/cross-chain movement.
+  - group: fiat
+    commands: [buy]
+    summary: Buy crypto with card/bank (returns a checkout URL); virtual accounts on-ramp.
+  - group: transaction
+    commands: [sign, send, list, retrieve]
+    summary: Sign locally, broadcast, and inspect transactions.
+  - group: mcp
+    commands: [mcp]
+    summary: Run the CLI as an MCP server (stdio) exposing all tools to MCP clients.
+key_flows:
+  - name: buy-crypto
+    example: mp buy --token sol --amount 50 --wallet <address> --email user@example.com
+    note: --amount is in USD; --token uses MoonPay currency codes.
+  - name: run-as-mcp
+    example: claude mcp add moonpay -- mp mcp
+note: >-
+  First-party CLI that also powers MoonPay's Agent Skills (github.com/moonpay/skills)
+  and the published MCP server. The binary is catalogued in packages/ as well.

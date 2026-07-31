@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: searched
+status: published
+source: https://github.com/moonpay/skills/blob/main/skills/moonpay-mcp/SKILL.md
+server:
+  name: moonpay
+  transport: stdio
+  command: mp
+  args: [mcp]
+  package: "@moonpay/cli"
+  install: npm i -g @moonpay/cli
+  auth: >-
+    Uses the same credentials as the MoonPay CLI (~/.config/moonpay/credentials.json).
+    Authenticate with `mp login --email <email>` then `mp verify --email <email> --code <code>`.
+setup:
+  claude_code: claude mcp add moonpay -- mp mcp
+  claude_desktop: >-
+    Add an mcpServers.moonpay entry with command "mp" and args ["mcp"] to
+    ~/Library/Application Support/Claude/claude_desktop_config.json
+tool_families:
+  - name: wallet_management
+    description: Create, import, list, retrieve, delete, and export wallets.
+  - name: token_operations
+    description: Search, retrieve, trending, swap, bridge, and transfer tokens.
+  - name: fiat
+    description: Buy crypto with card/bank; virtual accounts with on-ramp/off-ramp.
+  - name: x402_payments
+    description: Paid API requests with automatic payment handling (x402).
+  - name: transactions
+    description: Sign transactions locally, send, list, and retrieve.
+note: >-
+  MoonPay ships a published, first-party MCP server exposing every MoonPay CLI tool
+  over the Model Context Protocol via stdio (`mp mcp`). Tool families are as documented
+  in the moonpay-mcp skill; a per-tool schema is provided by the running CLI at connect time.

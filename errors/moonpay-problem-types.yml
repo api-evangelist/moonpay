@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: https://dev.moonpay.com/api-reference/platform/documentation/using-the-api
+format: custom-json
+envelope:
+  shape: '{ "code": <int>, "type": <string>, "message": <string> }'
+  example: '{ "code": 400, "type": "Invalid request", "message": "Invalid request. sourceAmount must be greater than 0." }'
+  note: >-
+    MoonPay returns a custom error object on failed (4xx) requests, not RFC 9457
+    application/problem+json. The `code` mirrors the HTTP status; `type` is a short
+    category; `message` is human-readable.
+problems:
+  - status: 400
+    type: Invalid request
+    title: Bad request
+    remediation: Fix the request parameters (e.g. amount must be greater than 0).
+  - status: 401
+    type: Unauthorized
+    title: Missing or invalid API key / access token
+    remediation: Send a valid X-Api-Key (server) or Bearer accessToken (client).
+  - status: 403
+    type: Forbidden
+    title: Not permitted for this key or region
+    remediation: Confirm the key's permissions and the customer's supported jurisdiction.
+  - status: 404
+    type: Not found
+    title: Resource not found
+    remediation: Verify the transaction/customer identifier.
+  - status: 409
+    type: Conflict
+    title: Operation cannot be applied in current state
+    remediation: >-
+      E.g. a sell transaction that is already completed cannot be canceled
+      (widget cancelSellTransaction returns 409).
+  - status: 429
+    type: Too many requests
+    title: Rate limit exceeded
+    remediation: Back off; the platform integration is limited to 30 requests per second.

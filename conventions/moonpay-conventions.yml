@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://dev.moonpay.com/api-reference/platform/documentation/using-the-api
+authentication:
+  style: api-key + bearer
+  server_header: X-Api-Key
+  client: Bearer accessToken
+  ref: authentication/moonpay-authentication.yml
+base_url: https://api.moonpay.com
+content_type: application/json
+pagination:
+  style: cursor
+  response_field: pageInfo.nextCursor
+  request_param: cursor
+  end_signal: pageInfo.nextCursor is null
+  example_endpoint: /platform/v1/transactions (list transactions)
+request_tracing:
+  header: X-Request-Id
+  direction: response
+  note: Returned on every response; include when contacting support.
+rate_limiting:
+  documented_limit: 30 requests per second
+  ref: rate-limits/
+  note: >-
+    The docs state 30 req/sec for the platform integration; no rate-limit response
+    headers are documented.
+idempotency:
+  supported: false
+  note: >-
+    No idempotency-key header is documented for the Platform or Widget API as of this
+    capture. Do not assume idempotent retries; sessions/quotes are the safe-retry surface.
+error_envelope:
+  format: custom-json
+  shape: '{ "code": <int>, "type": <string>, "message": <string> }'
+  ref: errors/moonpay-problem-types.yml
+  note: Not RFC 9457 problem+json; custom {code,type,message} envelope on 4xx.
+versioning:
+  scheme: uri-path
+  platform_api: /platform/v1
+  widget_api: /v3
+  note: Test vs live selected by API key prefix, not by URL.
+webhooks:
+  ref: asyncapi/moonpay-webhooks.yml
+  signing: HMAC request signature (webhooks/signature docs)

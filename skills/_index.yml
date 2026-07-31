@@ -1,0 +1,42 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/moonpay/skills
+note: >-
+  MoonPay publishes an official Agent Skills repository (github.com/moonpay/skills,
+  "Skills for AI agents to move money") installable via `npx skills add moonpay/skills`
+  or the Claude Code plugin marketplace `moonpay-skills`. The SKILL.md files below are
+  saved verbatim from that repo. All MoonPay skills drive the first-party `@moonpay/cli`
+  (`mp`) which also exposes an MCP server via `mp mcp`.
+install:
+  skills_cli: npx skills add moonpay/skills
+  claude_plugin: /plugin marketplace add moonpay/skills
+  marketplace: moonpay-skills
+skills:
+  - file: moonpay-auth.md
+    name: moonpay-auth
+    tags: [setup]
+    description: Set up the MoonPay CLI, authenticate, and manage local wallets.
+  - file: moonpay-buy-crypto.md
+    name: moonpay-buy-crypto
+    tags: [trading]
+    description: Buy crypto with fiat via MoonPay; returns a checkout URL.
+  - file: moonpay-swap-tokens.md
+    name: moonpay-swap-tokens
+    tags: [trading]
+    description: Swap tokens on the same chain or bridge tokens across chains.
+  - file: moonpay-deposit.md
+    name: moonpay-deposit
+    tags: [payments]
+    description: Create deposit links that accept crypto from any chain and auto-convert to stablecoins.
+  - file: moonpay-virtual-account.md
+    name: moonpay-virtual-account
+    tags: [fiat]
+    description: Set up a virtual account for fiat on-ramp and off-ramp (KYC, bank accounts).
+  - file: moonpay-export-data.md
+    name: moonpay-export-data
+    tags: [portfolio, export]
+    description: Export portfolio balances and transaction history to CSV or JSON.
+  - file: moonpay-mcp.md
+    name: moonpay-mcp
+    tags: [setup]
+    description: Set up MoonPay as an MCP server for Claude Desktop or Claude Code.

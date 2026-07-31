@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://dev.moonpay.com/platform/sdk-reference/overview
+loader_libraries:
+  - name: "@moonpay/moonpay-js"
+    kind: web widget loader
+    url: https://www.npmjs.com/package/@moonpay/moonpay-js
+  - name: React Native SDK (MoonPayProvider)
+    kind: mobile inline frames
+    docs: https://dev.moonpay.com/platform/sdk-reference/react-native/overview
+families:
+  - family: Widget
+    components:
+      - name: MoonPay Widget (buy/sell/swap)
+        surface: hosted embeddable widget
+        loader: "@moonpay/moonpay-js"
+  - family: React Native inline frames
+    docs: https://dev.moonpay.com/platform/sdk-reference/react-native/components/overview
+    components:
+      - name: "<MoonPayWidget />"
+        description: Inline buy widget rendered in your layout.
+      - name: "<MoonPayBuyButton />"
+        description: Inline card buy button.
+      - name: "<MoonPayBuyFrame />"
+        description: Headless buy frame (declarative alternative to client.setupBuy()).
+      - name: "<MoonPayAddCard />"
+        description: Inline card entry frame.
+      - name: "<MoonPayApplePayButton />"
+        description: Inline Apple Pay button.
+      - name: "<MoonPayGooglePayButton />"
+        description: Inline Google Pay button.
+      - name: "<MoonPayConnect />"
+        description: Inline connect flow.
+      - name: "<MoonPayAuth />"
+        description: Inline auth frame (email/OTP) for headless/Customer API integrations.
+      - name: "<MoonPayChallenge />"
+        description: Inline 3DS/challenge frame.
+      - name: "<MoonPayConnectionCheck />"
+        description: Headless connection check.
+      - name: "<MoonPayConnectionReset />"
+        description: Headless reset frame.
+note: >-
+  MoonPay ships embeddable/prebuilt UI surfaces (the hosted widget plus a set of
+  React Native inline frames/components) distinct from the server-side SDKs in packages/.

@@ -1,0 +1,69 @@
+generated: '2026-07-20'
+method: searched
+source: https://dev.moonpay.com/api-reference/platform/objects-and-types
+entities:
+  - name: Customer
+    description: A customer and their KYC standing.
+    docs: https://dev.moonpay.com/api-reference/platform/objects-and-types/customer
+  - name: CustomerExport
+    description: MoonPay-verified customer data returned by the export endpoint (consent-token gated).
+    docs: https://dev.moonpay.com/api-reference/platform/objects-and-types/customer-export
+  - name: Asset
+    description: A fiat currency or crypto token.
+    docs: https://dev.moonpay.com/api-reference/platform/objects-and-types/asset
+  - name: PaymentMethod
+    description: A payment method configuration with its capabilities and availability.
+    docs: https://dev.moonpay.com/api-reference/platform/objects-and-types/payment-method
+  - name: Quote
+    description: A quote for a buy transaction with locked rate, fees, and expiry.
+    docs: https://dev.moonpay.com/api-reference/platform/objects-and-types/quote
+  - name: Fees
+    description: Fee breakdown for an operation.
+    docs: https://dev.moonpay.com/api-reference/platform/objects-and-types/fees
+  - name: Transaction
+    description: A transaction representing a crypto purchase or sale.
+    docs: https://dev.moonpay.com/api-reference/platform/objects-and-types/transaction
+  - name: Wallet
+    description: A blockchain wallet address.
+    docs: https://dev.moonpay.com/api-reference/platform/objects-and-types/wallet
+relationships:
+  - from: Transaction
+    to: Customer
+    kind: belongs_to
+    via: customer
+  - from: Transaction
+    to: Asset
+    kind: has_one
+    via: baseCurrency / quoteCurrency
+  - from: Transaction
+    to: Fees
+    kind: has_one
+    via: fees
+  - from: Transaction
+    to: Wallet
+    kind: has_one
+    via: walletAddress
+  - from: Transaction
+    to: PaymentMethod
+    kind: has_one
+    via: paymentMethod
+  - from: Quote
+    to: Asset
+    kind: has_one
+    via: baseCurrency / quoteCurrency
+  - from: Quote
+    to: Fees
+    kind: has_one
+    via: fees
+  - from: PaymentMethod
+    to: Customer
+    kind: belongs_to
+    via: customer
+  - from: CustomerExport
+    to: Customer
+    kind: belongs_to
+    via: customer
+note: >-
+  Derived from MoonPay's published object reference; relationship `via` fields are
+  inferred from the object descriptions (quotes/transactions carry base/quote assets,
+  a fee breakdown, a destination wallet, and a payment method for a customer).
