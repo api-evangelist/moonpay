@@ -1,54 +1,4 @@
 edges:
-- partner_name: MiCA (EU)
-  partner: null
-  type: contract
-  channel: regulator-register
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://www.esma.europa.eu/sites/default/files/2024-12/CASPS.csv
-  contract_reference:
-    register: 'ESMA interim MiCA register: crypto-asset service providers (CASPS.csv)'
-    spec_file: null
-    role: authorised-casp
-    registered_name: MoonPay Europe B.V.
-    register_id: 254900KXWAZ3B1340G26
-    competent_authority: Netherlands Authority for the Financial Markets (AFM)
-    home_member_state: NL
-    authorised: 30/12/2024
-    services:
-    - c. exchange of crypto-assets for funds
-    - d. exchange of crypto-assets for other crypto-assets
-    - j. providing transfer services for crypto-assets on behalf of clients
-    matched_domain: moonpay.com
-    detected_by: sweep-crypto.py
-    detected: '2026-10-14'
-  detected_by: sweep-crypto.py
-  first_seen: '2026-10-14'
-- partner_name: NYDFS (New York)
-  partner: null
-  type: contract
-  channel: regulator-register
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses
-  contract_reference:
-    register: NYDFS virtual currency licensees
-    spec_file: null
-    register_snapshot: https://web.archive.org/web/20261010154817/https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses
-    registered_name: MoonPay Trust Company, LLC
-    role: limited-purpose-trust-charter
-    granted: 2025-11
-    evidence: https://www.moonpay.com/newsroom/nytrust
-    matched_by: verified-legal-name
-    detected_by: sweep-crypto.py
-    detected: '2026-10-14'
-    other_registrations:
-    - registered_name: MoonPay USA LLC
-      role: bitlicense+money-transmitter
-      granted: 2025-06
-      evidence: https://www.moonpay.com/legal/licenses
-  detected_by: sweep-crypto.py
-  first_seen: '2026-10-14'
 - partner_name: npm registry
   partner: npm
   partner_match: register
@@ -88,6 +38,56 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: MiCA (EU)
+  partner: null
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.esma.europa.eu/sites/default/files/2024-12/CASPS.csv
+  contract_reference:
+    register: 'ESMA interim MiCA register: crypto-asset service providers (CASPS.csv)'
+    spec_file: null
+    role: authorised-casp
+    registered_name: MoonPay Europe B.V.
+    register_id: 254900KXWAZ3B1340G26
+    competent_authority: Netherlands Authority for the Financial Markets (AFM)
+    home_member_state: 'NL '
+    authorised: 30/12/2024
+    services:
+    - c. exchange of crypto-assets for funds
+    - d. exchange of crypto-assets for other crypto-assets
+    - j. providing transfer services for crypto-assets on behalf of clients
+    matched_domain: moonpay.com
+    detected_by: sweep-crypto.py
+    detected: '2026-10-14'
+  detected_by: sweep-crypto.py
+  first_seen: '2026-10-14'
+- partner_name: NYDFS (New York)
+  partner: null
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses
+  contract_reference:
+    register: NYDFS virtual currency licensees
+    spec_file: null
+    register_snapshot: https://web.archive.org/web/20261010154817/https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses
+    registered_name: MoonPay Trust Company, LLC
+    role: limited-purpose-trust-charter
+    granted: 2025-11
+    evidence: https://www.moonpay.com/newsroom/nytrust
+    matched_by: verified-legal-name
+    detected_by: sweep-crypto.py
+    detected: '2026-10-14'
+    other_registrations:
+    - registered_name: MoonPay USA LLC
+      role: bitlicense+money-transmitter
+      granted: 2025-06
+      evidence: https://www.moonpay.com/legal/licenses
+  detected_by: sweep-crypto.py
+  first_seen: '2026-10-14'
 generated: '2026-10-13'
 method: searched
 checked:
@@ -101,10 +101,10 @@ checked:
 - https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses
 - https://www.esma.europa.eu/sites/default/files/2024-12/CASPS.csv
 source:
-- https://api.nuget.org/v3
-- https://crates.io/api/v1
-- https://proxy.golang.org
-- https://pypi.org/pypi
 - https://registry.npmjs.org
-- https://repo1.maven.org/maven2
+- https://pypi.org/pypi
 - https://rubygems.org/api/v1
+- https://crates.io/api/v1
+- https://repo1.maven.org/maven2
+- https://api.nuget.org/v3
+- https://proxy.golang.org
