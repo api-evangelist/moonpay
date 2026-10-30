@@ -64,6 +64,111 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-MoonPay is a company surfaced as a portfolio company of paradigm, speedinvest and added to the API Evangelist network as a stub for enrichment. Sector: crypto-infrastructure. This profile is a lead awaiting the enrichment pipeline.
+MoonPay is a crypto payments infrastructure company that lets businesses and their users buy, sell, and swap digital assets. Its developer platform exposes a Platform API and a Widget API over https://api.moonpay.com covering fiat-to-crypto on-ramp, crypto-to-fiat off-ramp, token swaps and cross-chain bridging, virtual bank accounts for programmatic banking, DeFi token data, KYC/customer management, and a rich webhook event surface. MoonPay ships first-party JavaScript SDKs (the moonpay-js widget SDK and login SDK), web and React Native inline components, a CLI (@moonpay/cli), a published MCP server, and an official Agent Skills library ("skills for AI agents to move money"). Surfaced as a portfolio company of Paradigm and Speedinvest and enriched from its public developer surface.
 
-Backed by: paradigm, speedinvest — https://www.moonpay.com
+**Areas:** Company · Crypto Infrastructure · Payments · Cryptocurrency · On-Ramp · Off-Ramp · Fintech · Digital Wallet · Blockchain · KYC
+
+## MoonPay on APIs.io
+
+Everything profiled for MoonPay is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/moonpay/](https://apis.io/providers/moonpay/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [MoonPay Platform API](https://apis.io/apis/moonpay/moonpay-platform-api/) — Server and client API for on-ramp, off-ramp, swaps, quotes, sessions, customers (KYC), payment methods, transactions, and virtual accounts.
+- [MoonPay Widget API](https://apis.io/apis/moonpay/moonpay-widget-api/) — Widget integration API for buy/sell/swap quotes and transactions, supported currencies and countries, DeFi tokens, network fees, and virtual accounts.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Moonpay Webhooks](https://apis.io/asyncapis/moonpay/moonpay-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [moonpay](https://apis.io/servers/moonpay/moonpay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Moonpay Authentication](https://apis.io/security/moonpay/moonpay-authentication/)
+- [Moonpay Domain Security](https://apis.io/security/moonpay/moonpay-domain-security/)
+- [Moonpay Trust Center](https://apis.io/security/moonpay/moonpay-trust-center/)
+- [Moonpay Vulnerability Disclosure](https://apis.io/security/moonpay/moonpay-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.moonpay.com)
+- [Documentation](https://dev.moonpay.com)
+- [Getting started](https://dev.moonpay.com/api-reference/platform/documentation/using-the-api)
+- [API reference](https://dev.moonpay.com/api-reference)
+- [Support](https://support.moonpay.com)
+- [Blog](https://www.moonpay.com/blog)
+- [Security](https://hackerone.com/moonpay)
+- [Terms of service](https://www.moonpay.com/legal/terms_of_use_row)
+- [Privacy policy](https://www.moonpay.com/legal/privacy_policy)
+- [GitHub](https://github.com/moonpay)
+- [Status](https://status.moonpay.com)
+
+## API Evangelist rating
+
+**Kin Score 52.7** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 85.7 |
+| Access clarity | 43.4 |
+
+**Agent readiness 29.7** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 39.3** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/moonpay/](https://apis.io/providers/moonpay/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for MoonPay: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/moonpay/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
